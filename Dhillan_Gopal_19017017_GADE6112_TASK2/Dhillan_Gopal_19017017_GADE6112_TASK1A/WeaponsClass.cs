@@ -43,24 +43,10 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			get { return range; }
 			set { range = value; }
 		}
-		protected WeaponsClass(int x, int y) : base(x, y)
+		protected WeaponsClass(TileClass.tileType type,int x, int y) : base(x, y)
 		{
 			
-			if (weaponType == "Danger")
-			{
-				durability = 10;
-				damage = 3;
-				cost = 3;
-			}
-			else
-			{
-				if (weaponType == "Longsword")
-				{
-					durability = 6;
-					damage = 5;
-					cost = 4;
-				}
-			}
+			
 		}
 	}
 		

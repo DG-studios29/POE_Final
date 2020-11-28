@@ -16,7 +16,9 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			Hero,
 			Weapon,
 			Gold,
-			Enemy
+			Enemy,
+			rangedWeapons,
+			MeleeWeapon
 		}
 		protected int x;
 		protected int y;

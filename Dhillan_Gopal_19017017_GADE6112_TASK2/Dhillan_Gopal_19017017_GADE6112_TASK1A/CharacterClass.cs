@@ -15,6 +15,18 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			Nomovement
 		}
 
+		protected int goldbag;
+		public int goldBag
+		{
+			get
+			{
+				return goldbag;
+			}
+			set
+			{
+				goldbag = value;
+			}
+		}
 
 		protected int HP;
 		public int hp

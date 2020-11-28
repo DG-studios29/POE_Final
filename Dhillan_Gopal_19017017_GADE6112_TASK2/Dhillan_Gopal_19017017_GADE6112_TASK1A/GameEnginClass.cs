@@ -8,6 +8,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 	class GameEnginClass
 	{
 		private MapClass map;
+		private ShopClass shop;
 
 		public GameEnginClass(int min_width, int max_width, int min_height, int max_height, int num_enemies, int gold)
 		{
@@ -15,6 +16,14 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		}
 		public GameEnginClass()
 		{ }
+
+		public ShopClass Shop
+		{
+			get
+			{
+				return shop;
+			}
+		}
 		public TileClass[,] getMapView()
 		{
 			return map.getMap();
