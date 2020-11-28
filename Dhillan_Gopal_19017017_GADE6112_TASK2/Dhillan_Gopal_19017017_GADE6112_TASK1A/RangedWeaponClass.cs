@@ -19,7 +19,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
         { 
             get 
             { 
-                     return base.Range;
+                return base.Range;
             } 
 
             set 
@@ -28,7 +28,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
             } 
         }
 
-        public RangedWeaponClass(rangedWeapons type, int x, int y) : base(TileClass.tileType.rangedWeapons, x, y)
+        public RangedWeaponClass(rangedWeapons type, int x, int y) : base(x, y)
         {
             if (type == rangedWeapons.Rifle)
             {

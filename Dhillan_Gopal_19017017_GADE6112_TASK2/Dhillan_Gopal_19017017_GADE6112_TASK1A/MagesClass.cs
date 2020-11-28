@@ -25,6 +25,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		{
 			magesDamage = damage;
 			magesHp = hp;
+			goldBag =  3;
 		}
 
 		public override Movement returnMove(Movement move = 0)

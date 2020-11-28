@@ -45,7 +45,6 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			}
 			this.iteams = new ItemClass[gold];
 
-			
 			for (int i = 0; i < iteams.Length; ++i)
 			{
 				iteams[i] = (GoldClass)create(TileClass.tileType.Gold);
@@ -92,6 +91,10 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			else if (type == TileClass.tileType.Gold)
 			{
 				return new GoldClass(spawnLocation[1], spawnLocation[0]);
+			}
+			else if (type == TileClass.tileType.Weapon)
+			{
+				
 			}
 			else
 			{

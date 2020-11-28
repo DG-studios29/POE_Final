@@ -69,7 +69,18 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 				Damage = value;
 			}
 		}
-
+		protected WeaponsClass weapons;
+		public WeaponsClass Weapons
+		{
+			get
+			{
+				return Weapons;
+			}
+			set
+			{
+				Weapons = value;
+			}
+		}
 
 
 		protected TileClass[] characterVision;
@@ -196,11 +207,22 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		}
 		public abstract Movement returnMove(Movement move = 0);
 
+		private void Equip(WeaponsClass w)
+		{
+			Weapons.setX(X);
+			Weapons.setY(Y);
+			Weapons = w;
+		}
+
 		public void pickup(ItemClass i)
 		{
 			if (i is GoldClass)
 			{
 				goldAmount += ((GoldClass)i).getgoldAmount();
+			}
+			else
+			{
+				Equip((WeaponsClass)i);
 			}
 		}
 		public int getgoldAmount()
@@ -224,7 +246,14 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			return this.lock_vision;
 		}
 		
-
+		public void LootGold(CharacterClass target)
+		{
+			goldBag += target.goldBag;
+			if ((this.type != TileClass.tileType.Enemy && Weapons==null))
+			{
+				Equip(target.Weapons);
+			}
+		}
 
 
 

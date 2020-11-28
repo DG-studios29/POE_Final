@@ -43,11 +43,13 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			get { return range; }
 			set { range = value; }
 		}
-		protected WeaponsClass(TileClass.tileType type,int x, int y) : base(x, y)
-		{
-			
-			
-		}
+			public WeaponsClass(int x, int y) : base(x, y)
+			{
+				this.type = TileClass.tileType.Weapon;
+				
+			}
+
+		
 	}
 		
 }
