@@ -92,10 +92,6 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			{
 				return new GoldClass(spawnLocation[1], spawnLocation[0]);
 			}
-			else if (type == TileClass.tileType.Weapon)
-			{
-				
-			}
 			else
 			{
 				return new EmptyTileClass(spawnLocation[1], spawnLocation[0]);

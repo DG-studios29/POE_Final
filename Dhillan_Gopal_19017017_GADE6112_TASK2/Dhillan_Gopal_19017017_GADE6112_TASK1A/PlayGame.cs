@@ -111,6 +111,14 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			{
 				return 'G';
 			}
+			else if (type is LeaderClass)
+			{
+				return 'L';
+			}
+			else if (type is WeaponsClass)
+			{
+				return 'W';
+			}
 			else if (type is MagesClass)
 			{
 				return 'M';
@@ -199,6 +207,8 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		{
 			ge.saveGame();
 		}
+
+		
 	}
 
 }

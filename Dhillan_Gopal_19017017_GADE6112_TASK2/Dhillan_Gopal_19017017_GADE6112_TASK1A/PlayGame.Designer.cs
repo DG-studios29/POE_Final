@@ -43,6 +43,10 @@
 			this.btnSaveGame = new System.Windows.Forms.Button();
 			this.lblAttackBtn = new System.Windows.Forms.Label();
 			this.lblMoveBtn = new System.Windows.Forms.Label();
+			this.btnDagger = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
+			this.button3 = new System.Windows.Forms.Button();
+			this.button4 = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// lblEnemiesRemaining
@@ -160,9 +164,9 @@
 			// 
 			// btnSaveGame
 			// 
-			this.btnSaveGame.Location = new System.Drawing.Point(1204, 12);
+			this.btnSaveGame.Location = new System.Drawing.Point(1182, 12);
 			this.btnSaveGame.Name = "btnSaveGame";
-			this.btnSaveGame.Size = new System.Drawing.Size(153, 101);
+			this.btnSaveGame.Size = new System.Drawing.Size(175, 49);
 			this.btnSaveGame.TabIndex = 19;
 			this.btnSaveGame.Text = "Save Game";
 			this.btnSaveGame.UseVisualStyleBackColor = true;
@@ -188,11 +192,51 @@
 			this.lblMoveBtn.TabIndex = 20;
 			this.lblMoveBtn.Text = "Move Buttons";
 			// 
+			// btnDagger
+			// 
+			this.btnDagger.Location = new System.Drawing.Point(589, 446);
+			this.btnDagger.Name = "btnDagger";
+			this.btnDagger.Size = new System.Drawing.Size(211, 50);
+			this.btnDagger.TabIndex = 21;
+			this.btnDagger.Text = "Dagger: 3$";
+			this.btnDagger.UseVisualStyleBackColor = true;
+			// 
+			// button2
+			// 
+			this.button2.Location = new System.Drawing.Point(589, 527);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(211, 50);
+			this.button2.TabIndex = 21;
+			this.button2.Text = "Longsword: 5$";
+			this.button2.UseVisualStyleBackColor = true;
+			// 
+			// button3
+			// 
+			this.button3.Location = new System.Drawing.Point(589, 669);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(211, 50);
+			this.button3.TabIndex = 21;
+			this.button3.Text = "Rilfe: 7$";
+			this.button3.UseVisualStyleBackColor = true;
+			// 
+			// button4
+			// 
+			this.button4.Location = new System.Drawing.Point(589, 604);
+			this.button4.Name = "button4";
+			this.button4.Size = new System.Drawing.Size(211, 50);
+			this.button4.TabIndex = 21;
+			this.button4.Text = "Longbow: 6$";
+			this.button4.UseVisualStyleBackColor = true;
+			// 
 			// PlayGame
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1369, 749);
+			this.Controls.Add(this.button4);
+			this.Controls.Add(this.button3);
+			this.Controls.Add(this.button2);
+			this.Controls.Add(this.btnDagger);
 			this.Controls.Add(this.lblMoveBtn);
 			this.Controls.Add(this.lblAttackBtn);
 			this.Controls.Add(this.btnSaveGame);
@@ -233,5 +277,9 @@
 		private System.Windows.Forms.Button btnSaveGame;
 		private System.Windows.Forms.Label lblAttackBtn;
 		private System.Windows.Forms.Label lblMoveBtn;
+		private System.Windows.Forms.Button btnDagger;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button button4;
 	}
 }

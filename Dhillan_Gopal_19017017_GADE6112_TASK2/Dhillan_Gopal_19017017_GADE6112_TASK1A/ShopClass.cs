@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 {
 	[Serializable]
-	class ShopClass
+	class ShopClass : GameEnginClass
 	{
 		private WeaponsClass[] weapon = new WeaponsClass[3];
 		private Random numRand = new Random(Guid.NewGuid().GetHashCode());

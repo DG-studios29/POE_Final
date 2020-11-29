@@ -16,7 +16,12 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 
 		public override string ToString()
 		{
-			string infoDisplay = "";
+			if (CharacterClass.tileType.Weapon == tileType.rangedWeapons)
+			{
+			
+			}
+
+			string infoDisplay = "Player stats:\t";
 			infoDisplay += "Player Hp: " + HP.ToString() + "\n";
 			infoDisplay += "X Postion: " + x.ToString() + "\t";
 			infoDisplay += "Y Postion: " + y.ToString() + "\t" + "\n";
