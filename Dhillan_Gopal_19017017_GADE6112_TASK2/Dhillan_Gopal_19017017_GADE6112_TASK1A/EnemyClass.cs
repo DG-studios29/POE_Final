@@ -11,7 +11,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 	[Serializable]
 	abstract class EnemyClass : CharacterClass
 	{
-		protected Random rnd = new Random();
+		
 		public EnemyClass(int x, int y, TileClass.tileType type, int damage, int hp) : base(x, y, type)
 		{
 			setDamage(damage);

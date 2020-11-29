@@ -9,42 +9,50 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
     [Serializable]
     class RangedWeaponClass : WeaponsClass
 	{
-		public enum rangedWeapons
+		public enum Types
 		{
             Longbow,
             Rifle			
 		}
-        public rangedWeapons rangedtype;
         public override int Range
-        { 
-            get 
-            { 
-                return base.Range;
-            } 
-
-            set 
-            { 
-                Range = value; 
-            } 
-        }
-
-        public RangedWeaponClass(rangedWeapons type, int x, int y) : base(x, y)
         {
-            if (type == rangedWeapons.Rifle)
+            get
             {
-                WeaponType = "Rifle"; durability = 3; Range = 3; damage = 5; cost = 7;
+                return base.Range;
+            }
+
+            set
+            {
+                Range = value;
+            }
+        }
+        public RangedWeaponClass(Types type, int x, int y) : base(x, y, "*")
+        {
+            if (type == Types.Longbow)
+            {
+                durability = 4;
+                Range = 2;
+                damage = 4;
+                cost = 6;
+                
             }
             else
             {
-                WeaponType = "Longbow"; durability = 4; Range = 2; damage = 4; cost = 6;
+                if (type == Types.Rifle)
+                {
+                    durability = 3;
+                    Range = 3;
+                    damage = 5;
+                    cost = 7;
+                }
             }
-            rangedtype = type;
+            
         }
+        public RangedWeaponClass(Types type, int x, int y, int durability) : this(type, x, y) // what to do Durability?
+		{
+           
+		}
 
-        public override string ToString()
-        {
-            return weaponType; 
-        }
     }
 }
 	

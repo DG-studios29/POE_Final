@@ -23,6 +23,10 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			{
 				return shop;
 			}
+			set
+			{
+				shop = value;
+			}
 		}
 		public TileClass[,] getMapView()
 		{

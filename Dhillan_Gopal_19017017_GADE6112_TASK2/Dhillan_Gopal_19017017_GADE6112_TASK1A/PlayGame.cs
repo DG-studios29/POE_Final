@@ -117,26 +117,15 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			}
 			else if (type is MeleeWeaponClass)
 			{
-				if (((MeleeWeaponClass)type).weapontype == MeleeWeaponClass.weaponTypes.Dagger)
-				{
-					return '^';
-				}
-				else
-				{
-					return '*';
-				}
-
+				return '^';
 			}
+
 			else if (type is RangedWeaponClass)
 			{
-				if (((RangedWeaponClass)type).rangedtype == RangedWeaponClass.rangedWeapons.Rifle)
-				{
-					return '+';
-				}
-				else
-				{
-					return '#';
-				}
+
+				return '*';
+
+
 			}
 			else if (type is MagesClass)
 			{

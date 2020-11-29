@@ -74,11 +74,11 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		{
 			get
 			{
-				return Weapons;
+			return Weapons;
 			}
 			set
 			{
-				Weapons = value;
+			Weapons = value;
 			}
 		}
 
@@ -102,12 +102,13 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			this.hp = temphp;
 			this.maxHP = tempmaxHP;
 			this.damage = tempdamage;
-			CharacterVision = tempcharacterVision;
+			this.characterVision = tempcharacterVision;
 
 		}
 
 		public CharacterClass(int Xtemp, int Ytemp, tileType typetemp) : base(Xtemp, Ytemp, typetemp)
 		{
+
 		}
 
 		public virtual void Attack(CharacterClass target)
@@ -157,13 +158,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 
 		public abstract override string ToString();
 
-		private int distanceTo(CharacterClass target)
-		{
-			int x = Math.Abs(target.getX() - this.x);
-			int y = Math.Abs(target.getY() - this.y);
-
-			return x + y;
-		}
+		
 		public void setHp(int hp)
 		{
 			this.hp = hp;
@@ -180,11 +175,6 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		public void setMaxHp(int max_hp)
 		{
 			this.MaxHP = max_hp;
-		}
-
-		public int getMaxHp()
-		{
-			return this.MaxHP;
 		}
 
 		public void setDamage(int damage)
@@ -209,9 +199,9 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 
 		private void Equip(WeaponsClass w)
 		{
-			Weapons.setX(X);
-			Weapons.setY(Y);
-			Weapons = w;
+			weapons.setX(X);
+			weapons.setY(Y);
+			weapons = w;
 		}
 
 		public void pickup(ItemClass i)
@@ -249,9 +239,9 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		public void LootGold(CharacterClass target)
 		{
 			goldBag += target.goldBag;
-			if ((this.type != TileClass.tileType.Enemy && Weapons==null))
+			if ((this.type != TileClass.tileType.Enemy && weapons==null))
 			{
-				Equip(target.Weapons);
+				Equip(target.weapons);
 			}
 		}
 

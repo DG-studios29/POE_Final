@@ -18,7 +18,8 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			Gold,
 			Enemy,
 			rangedWeapons,
-			MeleeWeapon,
+			MeleeWeapon
+			
 			
 		}
 		protected int x;

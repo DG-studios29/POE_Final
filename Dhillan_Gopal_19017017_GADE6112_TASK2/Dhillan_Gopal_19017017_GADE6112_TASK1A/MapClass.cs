@@ -82,7 +82,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 
 			if (type == TileClass.tileType.Hero)
 			{
-				return new HeroClass(spawnLocation[1], spawnLocation[0], 10);
+				return new HeroClass(spawnLocation[1], spawnLocation[0],10);
 			}
 			else if (type == TileClass.tileType.Enemy)
 			{
@@ -98,7 +98,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			}
 
 		}
-		public EnemyClass enemyGen(int y, int x)// this will give a random enemy
+		public EnemyClass enemyGen(int y, int x)
 		{
 			if (rnd.Next(1, 3) == 1)
 			{
@@ -108,6 +108,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			{
 				return new GoblinClass(y, x);
 			}
+			
 		}
 
 		private void updateVision()

@@ -16,55 +16,23 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		public ShopClass(CharacterClass buyer)
 		{
 			Buyer = buyer;
-			for(int i = 0; i < weapon.Length; i++)
-			{
-				weapon[i] = RandomWeapon();
-			}
+			
 		}
 		public bool CanBuy(int num)
 		{ 
-			return Buyer.goldBag >= weapon[num].Cost;
+			
 		}
 		public void Buy(int num)
 		{
-			Buyer.goldBag -= weapon[num].Cost;
-			Buyer.pickup(weapon[num]);
-			weapon[num] = RandomWeapon();
+			
 		}
 		public string DisplayWeapon(int num)
 		{
-			return "Buy " + weapon[num].WeaponType + weapon[num].Cost.ToString() + "Gold";
+			
 		}
 		private WeaponsClass RandomWeapon()
 		{
-			WeaponsClass createweapon;
-			int weaponSelect = numRand.Next(0, 4);
-
-			if (weaponSelect == 0)
-			{
-				createweapon = new RangedWeaponClass(RangedWeaponClass.rangedWeapons.Longbow, 0, 0);
-
-			}
-			else
-			{
-				if (weaponSelect == 1)
-				{
-					createweapon = new RangedWeaponClass(RangedWeaponClass.rangedWeapons.Rifle, 0, 0);
-				}
-				else
-				{
-					if (weaponSelect == 2)
-					{
-						createweapon = new MeleeWeaponClass(0, 0, MeleeWeaponClass.weaponTypes.Longsword);
-					}
-					else
-					{
-						createweapon = new MeleeWeaponClass(0, 0, MeleeWeaponClass.weaponTypes.Dagger);
-					}
-				}
-				
-			}
-			return createweapon;
+			
 
 		}
 	}

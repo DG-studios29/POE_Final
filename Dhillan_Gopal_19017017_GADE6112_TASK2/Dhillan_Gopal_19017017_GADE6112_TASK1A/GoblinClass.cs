@@ -8,8 +8,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 
 		public GoblinClass(int x, int y) : base(x, y, TileClass.tileType.Enemy, 1, 10)
 		{
-			Weapons = new MeleeWeaponClass(x, y, MeleeWeaponClass.weaponTypes.Dagger);
-			goldBag = 1;
+			
 		}
 
 		public override Movement returnMove(CharacterClass.Movement move)
