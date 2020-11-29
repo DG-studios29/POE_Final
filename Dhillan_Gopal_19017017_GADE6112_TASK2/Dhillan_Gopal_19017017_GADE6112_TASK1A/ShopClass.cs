@@ -38,7 +38,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		private WeaponsClass RandomWeapon()
 		{
 			WeaponsClass createweapon;
-			int weaponSelect = numRand.Next(0, 3);
+			int weaponSelect = numRand.Next(0, 4);
 
 			if (weaponSelect == 0)
 			{

@@ -8,7 +8,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 {
 	class LeaderClass : EnemyClass
 	{
-        Random roll;
+		private CharacterClass target;
 		public LeaderClass(int x, int y, tileType type, int damage, int hp) : base(x, y, type, damage, hp)
 		{
 			damage = 2;
@@ -22,9 +22,10 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			set { Tile = value; }
 
 		}
-		public override Movement returnMove(Movement move = Movement.Up)
+		
+		public override Movement returnMove(Movement move = 0)
 		{
-
+			
 		}
 		
     }

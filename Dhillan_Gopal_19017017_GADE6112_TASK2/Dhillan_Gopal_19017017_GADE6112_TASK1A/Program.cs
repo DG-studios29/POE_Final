@@ -16,7 +16,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
+			Application.Run(new GameMenu());
 		}
 	}
 }

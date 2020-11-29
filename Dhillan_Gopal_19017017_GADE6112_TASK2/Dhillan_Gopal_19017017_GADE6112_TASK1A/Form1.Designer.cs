@@ -1,6 +1,6 @@
 ﻿namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 {
-	partial class Form1
+	partial class GameMenu
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -172,7 +172,7 @@
 			this.edtGold.Size = new System.Drawing.Size(100, 22);
 			this.edtGold.TabIndex = 2;
 			// 
-			// Form1
+			// GameMenu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -192,7 +192,7 @@
 			this.Controls.Add(this.lblMinHeight);
 			this.Controls.Add(this.lblErrorMessage);
 			this.Controls.Add(this.btnStartGame);
-			this.Name = "Form1";
+			this.Name = "GameMenu";
 			this.Text = "Game Menu";
 			this.ResumeLayout(false);
 			this.PerformLayout();

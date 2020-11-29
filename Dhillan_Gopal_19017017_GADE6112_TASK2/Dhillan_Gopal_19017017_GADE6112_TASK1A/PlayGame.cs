@@ -6,7 +6,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 {
 	public partial class PlayGame : Form
 	{
-		private Form1 caller;
+		private GameMenu caller;
 		private GameEnginClass ge;
 		private int width;
 		private int height;
@@ -30,7 +30,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			redraw();
 
 		}
-		public void setCaller(Form1 caller)
+		public void setCaller(GameMenu caller)
 		{
 			this.caller = caller;
 		}
@@ -50,7 +50,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			else
 			{
 				lblActionStatus.ForeColor = Color.Red;
-				lblActionStatus.Text = "You cannot " + action;
+				lblActionStatus.Text = "You can not " + action;
 			}
 		}
 
@@ -115,9 +115,28 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			{
 				return 'L';
 			}
-			else if (type is WeaponsClass)
+			else if (type is MeleeWeaponClass)
 			{
-				return 'W';
+				if (((MeleeWeaponClass)type).weapontype == MeleeWeaponClass.weaponTypes.Dagger)
+				{
+					return '^';
+				}
+				else
+				{
+					return '*';
+				}
+
+			}
+			else if (type is RangedWeaponClass)
+			{
+				if (((RangedWeaponClass)type).rangedtype == RangedWeaponClass.rangedWeapons.Rifle)
+				{
+					return '+';
+				}
+				else
+				{
+					return '#';
+				}
 			}
 			else if (type is MagesClass)
 			{
@@ -208,7 +227,61 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			ge.saveGame();
 		}
 
-		
+		private void btnDagger_Click(object sender, EventArgs e)
+		{
+			if(ge.Shop.CanBuy(0))
+			{
+				ge.Shop.Buy(0);
+				btnDagger.Visible = true;
+				updatePlayerStats(ge.getHeroStats());
+			}
+			else
+			{
+				btnDagger.Visible = false;
+			}
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			if (ge.Shop.CanBuy(1))
+			{
+				ge.Shop.Buy(1);
+				btnLongsword.Visible = true;
+				updatePlayerStats(ge.getHeroStats());
+			}
+			else
+			{
+				btnLongsword.Visible = false;
+			}
+		}
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+			if (ge.Shop.CanBuy(2))
+			{
+				ge.Shop.Buy(2);
+				btnLongbow.Visible = true;
+				updatePlayerStats(ge.getHeroStats());
+			}
+			else
+			{
+				btnLongbow.Visible = false;
+			}
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			if (ge.Shop.CanBuy(3))
+			{
+				ge.Shop.Buy(3);
+				btnRilfe.Visible = true;
+				updatePlayerStats(ge.getHeroStats());
+			}
+			else
+			{
+				btnRilfe.Visible = false;
+			}
+		}
 	}
 
 }

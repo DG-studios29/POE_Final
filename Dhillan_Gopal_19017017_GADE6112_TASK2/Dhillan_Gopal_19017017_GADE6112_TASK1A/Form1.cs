@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 {
-	public partial class Form1 : Form
+	public partial class GameMenu : Form
 	{
         
-        public Form1()
+        public GameMenu()
 		{
 			InitializeComponent();
             
