@@ -12,6 +12,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		private WeaponsClass[] weapons;
 		private Random numRand;
 		private CharacterClass buyer;
+		private string recentlyBoughtWeaponDisplay;
 
 		public ShopClass(CharacterClass _buyer)
 		{
@@ -20,6 +21,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			weapons = new WeaponsClass[3];// add weapons into array
 			for(int i = 0; i < weapons.Length; ++i)
 			{
+				//System.Windows.Forms.MessageBox.Show("i = " + i);
 				weapons[i] = RandomWeapon();
 			}
 		}
@@ -37,33 +39,55 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			WeaponsClass choosenWeapon = weapons[num];
 			buyer.deductGold(choosenWeapon.Cost);
 			buyer.pickup(choosenWeapon);
+			recentlyBoughtWeaponDisplay = "Bought " + choosenWeapon.WeaponType + " (" + choosenWeapon.Cost.ToString() + " Gold)";
 			weapons[num] = RandomWeapon();
 		}
 		public string DisplayWeapon(int num)
 		{
-			WeaponsClass choosenWeapon = weapons[num];
-			return "Buy WeaponType (" + choosenWeapon.Cost.ToString() + " Gold)";
+			return recentlyBoughtWeaponDisplay;
 		}
 		private WeaponsClass RandomWeapon()
 		{
-			int[] possibleWeapons = { 0, 1, 2, 3 };
-			int randomWeapon = possibleWeapons[numRand.Next(0, possibleWeapons.Length)];
+			int[] possibleWeapons = { 0, 1, 2 };
+			int randomWeapon = numRand.Next(0, 3);
 			if (randomWeapon == 0)
 			{
-				return new MeleeWeaponClass(MeleeWeaponClass.Types.Dagger);
+				if (this.getWeaponIndex("Dagger") < 0)
+				{
+					return new MeleeWeaponClass(MeleeWeaponClass.Types.Dagger);
+				}
+				
 			}
-			else if (randomWeapon == 1)
+			if (randomWeapon == 1)
 			{
-				return new MeleeWeaponClass(MeleeWeaponClass.Types.Longsword);
+				if (this.getWeaponIndex("Longsword") < 0)
+				{
+					return new MeleeWeaponClass(MeleeWeaponClass.Types.Longsword);
+				}
+					
 			}
-			else if (randomWeapon == 2)
+			if (randomWeapon == 2)
 			{
-				return new RangedWeaponClass(RangedWeaponClass.Types.Longbow);
+				if (this.getWeaponIndex("Longbow") < 0)
+				{
+					return new RangedWeaponClass(RangedWeaponClass.Types.Longbow);
+				}
+					
 			}
-			else 
-			{
 				return new RangedWeaponClass(RangedWeaponClass.Types.Rifle);
+		
+		}
+		public int getWeaponIndex(string w)
+		{ 
+			for (int i =0; i < weapons.Length; ++i)
+			{
+				if (weapons[i] != null && w == weapons[i].WeaponType)
+				{
+					return i;
+				}
 			}
+			return -1;
+		
 		}
 	}
 

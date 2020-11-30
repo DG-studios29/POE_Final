@@ -43,10 +43,10 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			get { return range; }
 			set { range = value; }
 		}
-		public WeaponsClass(int x, int y,string symbol) : base(x, y)
+		public WeaponsClass(int x, int y) : base(x, y)
 		{
 			this.type = TileClass.tileType.Weapon;
-			this.weaponType = symbol;
+		
 		}
 
 		

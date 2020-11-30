@@ -47,7 +47,7 @@
 			// 
 			// btnStartGame
 			// 
-			this.btnStartGame.Location = new System.Drawing.Point(86, 262);
+			this.btnStartGame.Location = new System.Drawing.Point(46, 374);
 			this.btnStartGame.Name = "btnStartGame";
 			this.btnStartGame.Size = new System.Drawing.Size(346, 84);
 			this.btnStartGame.TabIndex = 0;
@@ -58,7 +58,7 @@
 			// lblErrorMessage
 			// 
 			this.lblErrorMessage.AutoSize = true;
-			this.lblErrorMessage.Location = new System.Drawing.Point(161, 227);
+			this.lblErrorMessage.Location = new System.Drawing.Point(121, 339);
 			this.lblErrorMessage.Name = "lblErrorMessage";
 			this.lblErrorMessage.Size = new System.Drawing.Size(0, 17);
 			this.lblErrorMessage.TabIndex = 1;
@@ -147,9 +147,9 @@
 			// 
 			// btnLoadGame
 			// 
-			this.btnLoadGame.Location = new System.Drawing.Point(633, 9);
+			this.btnLoadGame.Location = new System.Drawing.Point(571, 12);
 			this.btnLoadGame.Name = "btnLoadGame";
-			this.btnLoadGame.Size = new System.Drawing.Size(222, 83);
+			this.btnLoadGame.Size = new System.Drawing.Size(171, 37);
 			this.btnLoadGame.TabIndex = 3;
 			this.btnLoadGame.Text = "Load previous game";
 			this.btnLoadGame.UseVisualStyleBackColor = true;
@@ -176,7 +176,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(867, 504);
+			this.ClientSize = new System.Drawing.Size(752, 504);
 			this.Controls.Add(this.btnLoadGame);
 			this.Controls.Add(this.edtMaxHeight);
 			this.Controls.Add(this.edtMaxWidth);

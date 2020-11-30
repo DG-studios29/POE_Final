@@ -23,13 +23,14 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 
             set
             {
-                Range = value;
+                base.Range = value;
             }
         }
-        public RangedWeaponClass(Types type, int x = 0, int y= 0) : base(x, y, "*")
+        public RangedWeaponClass(Types type, int x = 0, int y= 0) : base(x, y)
         {
             if (type == Types.Longbow)
             {
+                weaponType = "Longbow";
                 durability = 4;
                 Range = 2;
                 damage = 4;
@@ -40,11 +41,18 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
             {
                 if (type == Types.Rifle)
                 {
+                    weaponType = "Rifle";
                     durability = 3;
                     Range = 3;
                     damage = 5;
                     cost = 7;
-                }
+                    //System.Windows.Forms.MessageBox.Show("Rifle");
+
+				}
+               // else
+				//{
+                   // System.Windows.Forms.MessageBox.Show("UnKnown Range");
+                //}
             }
             
         }

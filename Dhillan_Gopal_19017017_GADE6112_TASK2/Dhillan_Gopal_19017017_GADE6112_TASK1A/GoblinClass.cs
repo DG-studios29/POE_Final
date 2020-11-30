@@ -8,7 +8,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 
 		public GoblinClass(int x, int y) : base(x, y, TileClass.tileType.Enemy, 1, 10,1)
 		{
-			
+			base.weapon = new MeleeWeaponClass(MeleeWeaponClass.Types.Dagger);
 		}
 
 		public override Movement returnMove(CharacterClass.Movement move)
@@ -54,7 +54,16 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			return direction;
 
 		}
-
+		public override string ToString()
+		{
+			string infoDisplay = "";
+			infoDisplay += this.hasWeapon() ? "Equipped: " + weapon.WeaponType : "Barehanded: ";
+			infoDisplay += "Golbin";
+			infoDisplay += "(10/10HP)";
+			infoDisplay += " at [ " + x.ToString() + ", " + y.ToString();
+			infoDisplay += "(" + (this.weapon.Durability * this.weapon.Cost) + " 1 DMG)";
+			return infoDisplay;
+		}
 	}
 
 }

@@ -14,7 +14,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		private int height;
 		
 
-		public MapClass(int min_width, int max_width, int min_height, int max_height, int num_enemies, int gold)
+		public MapClass(int min_width, int max_width, int min_height, int max_height, int num_enemies, int gold, int weaponDrop)
 		{
 			this.width = rnd.Next(min_width, max_width + 1);
 			this.height = rnd.Next(min_height, max_height + 1);
@@ -44,12 +44,19 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			{
 				gold = maxnumGold;
 			}
-			this.iteams = new ItemClass[gold];
+			this.iteams = new ItemClass[gold + weaponDrop];
 
-			for (int i = 0; i < iteams.Length; ++i)
+			for (int i = 0; i < gold; ++i)
 			{
 				iteams[i] = (GoldClass)create(TileClass.tileType.Gold);
 				map[iteams[i].getY(), iteams[i].getX()] = iteams[i];
+				//System.Windows.Forms.MessageBox.Show("i = " + i + " y = " + iteams[i].getY() + " X =" + iteams[i].getX());
+			}
+			for (int i = gold; i < weaponDrop + gold; ++i)
+			{
+				iteams[i] = (WeaponsClass)create(TileClass.tileType.Weapon);
+				map[iteams[i].getY(), iteams[i].getX()] = iteams[i];
+				//System.Windows.Forms.MessageBox.Show("i = " + i + " y = " + iteams[i].getY() + " X =" + iteams[i].getX());
 			}
 			updateVision();
 
@@ -93,11 +100,39 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			{
 				return new GoldClass(spawnLocation[1], spawnLocation[0]);
 			}
+			else if (type == TileClass.tileType.Weapon)
+			{
+				return RandomWeapon();
+			}
 			else
 			{
 				return new EmptyTileClass(spawnLocation[1], spawnLocation[0]);
 			}
+			
 
+		}
+		private WeaponsClass RandomWeapon()
+		{
+			int[] spawnLocation = getSpawnPosition();
+			Random numRand = new Random();
+			int[] possibleWeapons = { 0, 1, 2, 3 };
+			int randomWeapon = possibleWeapons[numRand.Next(0, possibleWeapons.Length)];
+			if (randomWeapon == 0)
+			{
+				return new MeleeWeaponClass(MeleeWeaponClass.Types.Dagger, spawnLocation[1], spawnLocation[0]);
+			}
+			else if (randomWeapon == 1)
+			{
+				return new MeleeWeaponClass(MeleeWeaponClass.Types.Longsword, spawnLocation[1], spawnLocation[0]);
+			}
+			else if (randomWeapon == 2)
+			{
+				return new RangedWeaponClass(RangedWeaponClass.Types.Longbow, spawnLocation[1], spawnLocation[0]);
+			}
+			else
+			{ 
+				return new RangedWeaponClass(RangedWeaponClass.Types.Rifle,spawnLocation[1], spawnLocation[0]);
+			}
 		}
 		public EnemyClass enemyGen(int y, int x)
 		{
@@ -108,11 +143,12 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			}
 			else if (rnd.Next(1, maxEnemyTypes) == 2)
 			{
-				return new LeaderClass(y,x);
+				return new LeaderClass(y,x,this.hero);
 			}
 			return new GoblinClass(y, x);
 
 		}
+		
 
 		private void updateVision()
 		{

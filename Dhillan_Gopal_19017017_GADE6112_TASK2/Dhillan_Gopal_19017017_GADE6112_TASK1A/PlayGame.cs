@@ -92,6 +92,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 
 		private char getRepresentation(TileClass type)
 		{
+			//MessageBox.Show("Type= " + type.type);
 			if (type is EmptyTileClass)
 			{
 				return '.';
@@ -101,7 +102,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 				if (ge.getMap().getHero().IsDead())
 				{
 					return '.';
-					
+
 				}
 				else
 				{
@@ -116,31 +117,41 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			{
 				return 'L';
 			}
+			else if (type is GoldClass)
+			{
+				return '$';
+			}
 			else if (type is MeleeWeaponClass)
 			{
-				
-				return '&';
+				if(((MeleeWeaponClass)type).WeaponType == "Longsword")
+				{
+					return '!';
+				}
+				else if(((MeleeWeaponClass)type).WeaponType == "Dagger")
+				{
+					return '^';
+				}
 			}
 
 			else if (type is RangedWeaponClass)
 			{
 
-				return '*';
-
-
+				if (((RangedWeaponClass)type).WeaponType == "Longbow")
+				{
+					return '*';
+				}
+				 if (((RangedWeaponClass)type).WeaponType == "Rifle")
+				{
+					return '>';
+				}
 			}
 			else if (type is MagesClass)
 			{
 				return 'M';
 			}
-			else if (type is GoldClass)
-			{
-				return '$';
-			}
-			else
-			{
-				return 'X';
-			}
+			//MessageBox.Show("Type= " + type.type);
+			return 'X';
+			
 		}
 
 		private void PlayGame_Load(object sender, EventArgs e)
@@ -152,23 +163,48 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		private void btnUp_Click_1(object sender, EventArgs e)
 		{
 			actionStatus("move up", ge.movePlayer(CharacterClass.Movement.Up), "");
+			this.checkGold();
 		}
 
 		private void btnLeft_Click_1(object sender, EventArgs e)
 		{
 			actionStatus("move left", ge.movePlayer(CharacterClass.Movement.Left), "");
+			this.checkGold();
 		}
 
 		private void btnDown_Click_1(object sender, EventArgs e)
 		{
 			actionStatus("move down", ge.movePlayer(CharacterClass.Movement.Down), "");
+			this.checkGold();
 		}
 
 		private void btnRight_Click_1(object sender, EventArgs e)
 		{
 			actionStatus("move right", ge.movePlayer(CharacterClass.Movement.Right), "");
+			this.checkGold();
 		}
-
+		private int check(string w,Button b) 
+		{
+			int i = ge.Shop.getWeaponIndex(w);
+			if (i >= 0 && ge.Shop.CanBuy(i))
+			{
+				b.Enabled = true;
+				
+			}
+			else
+			{
+				b.Enabled = false;
+			}
+			return i;
+		}
+		private void checkGold(HeroClass hero = null)
+		{
+			this.check("Dagger", btnDagger);
+			this.check("Longsword", btnLongsword);
+			this.check("Longbow", btnLongbow);
+			this.check("Rifle", btnRilfe);
+			//MessageBox.Show("LW= " + this.check("Longsword", btnLongsword) + " LB= " + this.check("Longbow", btnLongbow) + " R= " + this.check("Rifle", btnRilfe)+ " D= "+ this.check("Dagger", btnDagger));
+		}
 		private void btnAttackUp_Click(object sender, EventArgs e)
 		{
 			String response = ge.attackEnemy(CharacterClass.Movement.Up);
@@ -216,62 +252,61 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		private void btnSaveGame_Click(object sender, EventArgs e)
 		{
 			ge.saveGame();
+			MessageBox.Show("Your game was saved you may exit the game");
 		}
 
 		private void btnDagger_Click(object sender, EventArgs e)
 		{
-			if(ge.Shop.CanBuy(0))
+			int i = ge.Shop.getWeaponIndex("Dagger");
+			if (i >= 0 && ge.Shop.CanBuy(i))
 			{
-				ge.Shop.Buy(0);
-				btnDagger.Enabled = true;
+				ge.Shop.Buy(i);
+				lblWeaponCost.Text = ge.Shop.DisplayWeapon(i);
 				updatePlayerStats(ge.getHeroStats());
 			}
-			else
-			{
-				btnDagger.Enabled = false;
-			}
+			checkGold();
+			
 		}
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			if (ge.Shop.CanBuy(1))
+			int i = ge.Shop.getWeaponIndex("Longsword");
+			if (i >= 0 && ge.Shop.CanBuy(i))
 			{
-				ge.Shop.Buy(1);
-				btnLongsword.Enabled = true;
+				ge.Shop.Buy(i);
+				lblWeaponCost.Text = ge.Shop.DisplayWeapon(i);
 				updatePlayerStats(ge.getHeroStats());
 			}
-			else
-			{
-				btnLongsword.Enabled = false;
-			}
+			checkGold();
 		}
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-			if (ge.Shop.CanBuy(2))
+			int i = ge.Shop.getWeaponIndex("Longbow");
+			if (i >= 0 && ge.Shop.CanBuy(i))
 			{
-				ge.Shop.Buy(2);
-				btnLongbow.Enabled = true;
+				ge.Shop.Buy(i);
+				lblWeaponCost.Text = ge.Shop.DisplayWeapon(i);
 				updatePlayerStats(ge.getHeroStats());
 			}
-			else
-			{
-				btnLongbow.Enabled = false;
-			}
+			checkGold();
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			if (ge.Shop.CanBuy(3))
+			int i = ge.Shop.getWeaponIndex("Rifle");
+			if (i >= 0 && ge.Shop.CanBuy(i))
 			{
-				ge.Shop.Buy(3);
-				btnRilfe.Enabled = true;
+				ge.Shop.Buy(i);
+				lblWeaponCost.Text = ge.Shop.DisplayWeapon(i);
 				updatePlayerStats(ge.getHeroStats());
 			}
-			else
-			{
-				btnRilfe.Enabled = false;
-			}
+			checkGold();
+		}
+
+		private void label1_Click(object sender, EventArgs e)
+		{
+			
 		}
 	}
 

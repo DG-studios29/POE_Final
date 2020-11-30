@@ -14,23 +14,32 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 
 			
 		//}
-		public MeleeWeaponClass(Types type, int x = 0, int y = 0) : base(x,y,"&")
+		public MeleeWeaponClass(Types type, int x = 0, int y = 0) : base(x,y)
 		{
 			if (type == Types.Longsword)
 			{
+				weaponType = "Longsword";
 				durability = 6;
 				damage = 5;
-				cost = 4;
+				cost = 5;
 			}
 			else
 			{
 				if (type == Types.Dagger)
 				{
+					weaponType = "Dagger";
 					durability = 10;
 					damage = 3;
 					cost = 3;
-				}
+					//System.Windows.Forms.MessageBox.Show("Dagger");
 
+				}
+				//else
+				//{
+					//System.Windows.Forms.MessageBox.Show("UnKnown M");
+				//}
+
+			
 			}
 
 		}

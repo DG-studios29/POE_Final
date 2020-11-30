@@ -47,12 +47,13 @@
 			this.btnLongsword = new System.Windows.Forms.Button();
 			this.btnRilfe = new System.Windows.Forms.Button();
 			this.btnLongbow = new System.Windows.Forms.Button();
+			this.lblWeaponCost = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// lblEnemiesRemaining
 			// 
 			this.lblEnemiesRemaining.AutoSize = true;
-			this.lblEnemiesRemaining.Location = new System.Drawing.Point(26, 26);
+			this.lblEnemiesRemaining.Location = new System.Drawing.Point(1199, 172);
 			this.lblEnemiesRemaining.Name = "lblEnemiesRemaining";
 			this.lblEnemiesRemaining.Size = new System.Drawing.Size(0, 17);
 			this.lblEnemiesRemaining.TabIndex = 13;
@@ -75,7 +76,7 @@
 			// 
 			// btnRight
 			// 
-			this.btnRight.Location = new System.Drawing.Point(1290, 745);
+			this.btnRight.Location = new System.Drawing.Point(1286, 733);
 			this.btnRight.Name = "btnRight";
 			this.btnRight.Size = new System.Drawing.Size(85, 73);
 			this.btnRight.TabIndex = 8;
@@ -95,7 +96,7 @@
 			// 
 			// btnDown
 			// 
-			this.btnDown.Location = new System.Drawing.Point(1160, 745);
+			this.btnDown.Location = new System.Drawing.Point(1160, 733);
 			this.btnDown.Name = "btnDown";
 			this.btnDown.Size = new System.Drawing.Size(85, 73);
 			this.btnDown.TabIndex = 10;
@@ -105,7 +106,7 @@
 			// 
 			// btnLeft
 			// 
-			this.btnLeft.Location = new System.Drawing.Point(1031, 745);
+			this.btnLeft.Location = new System.Drawing.Point(1031, 733);
 			this.btnLeft.Name = "btnLeft";
 			this.btnLeft.Size = new System.Drawing.Size(85, 73);
 			this.btnLeft.TabIndex = 11;
@@ -134,7 +135,7 @@
 			// 
 			// btnAttackLeft
 			// 
-			this.btnAttackLeft.Location = new System.Drawing.Point(103, 745);
+			this.btnAttackLeft.Location = new System.Drawing.Point(119, 733);
 			this.btnAttackLeft.Name = "btnAttackLeft";
 			this.btnAttackLeft.Size = new System.Drawing.Size(83, 73);
 			this.btnAttackLeft.TabIndex = 18;
@@ -144,7 +145,7 @@
 			// 
 			// btnAttackDown
 			// 
-			this.btnAttackDown.Location = new System.Drawing.Point(241, 745);
+			this.btnAttackDown.Location = new System.Drawing.Point(241, 733);
 			this.btnAttackDown.Name = "btnAttackDown";
 			this.btnAttackDown.Size = new System.Drawing.Size(83, 73);
 			this.btnAttackDown.TabIndex = 18;
@@ -154,7 +155,7 @@
 			// 
 			// btnAttackRight
 			// 
-			this.btnAttackRight.Location = new System.Drawing.Point(377, 745);
+			this.btnAttackRight.Location = new System.Drawing.Point(358, 733);
 			this.btnAttackRight.Name = "btnAttackRight";
 			this.btnAttackRight.Size = new System.Drawing.Size(83, 73);
 			this.btnAttackRight.TabIndex = 18;
@@ -164,7 +165,7 @@
 			// 
 			// btnSaveGame
 			// 
-			this.btnSaveGame.Location = new System.Drawing.Point(1182, 12);
+			this.btnSaveGame.Location = new System.Drawing.Point(1225, 12);
 			this.btnSaveGame.Name = "btnSaveGame";
 			this.btnSaveGame.Size = new System.Drawing.Size(303, 51);
 			this.btnSaveGame.TabIndex = 19;
@@ -176,7 +177,7 @@
 			// 
 			this.lblAttackBtn.AutoSize = true;
 			this.lblAttackBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblAttackBtn.Location = new System.Drawing.Point(176, 572);
+			this.lblAttackBtn.Location = new System.Drawing.Point(186, 572);
 			this.lblAttackBtn.Name = "lblAttackBtn";
 			this.lblAttackBtn.Size = new System.Drawing.Size(198, 32);
 			this.lblAttackBtn.TabIndex = 20;
@@ -186,7 +187,7 @@
 			// 
 			this.lblMoveBtn.AutoSize = true;
 			this.lblMoveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblMoveBtn.Location = new System.Drawing.Point(1093, 572);
+			this.lblMoveBtn.Location = new System.Drawing.Point(1106, 574);
 			this.lblMoveBtn.Name = "lblMoveBtn";
 			this.lblMoveBtn.Size = new System.Drawing.Size(188, 32);
 			this.lblMoveBtn.TabIndex = 20;
@@ -236,11 +237,21 @@
 			this.btnLongbow.UseVisualStyleBackColor = true;
 			this.btnLongbow.Click += new System.EventHandler(this.button4_Click);
 			// 
+			// lblWeaponCost
+			// 
+			this.lblWeaponCost.AutoSize = true;
+			this.lblWeaponCost.Location = new System.Drawing.Point(665, 587);
+			this.lblWeaponCost.Name = "lblWeaponCost";
+			this.lblWeaponCost.Size = new System.Drawing.Size(0, 17);
+			this.lblWeaponCost.TabIndex = 22;
+			this.lblWeaponCost.Click += new System.EventHandler(this.label1_Click);
+			// 
 			// PlayGame
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1497, 848);
+			this.ClientSize = new System.Drawing.Size(1551, 848);
+			this.Controls.Add(this.lblWeaponCost);
 			this.Controls.Add(this.btnLongbow);
 			this.Controls.Add(this.btnRilfe);
 			this.Controls.Add(this.btnLongsword);
@@ -289,5 +300,6 @@
 		private System.Windows.Forms.Button btnLongsword;
 		private System.Windows.Forms.Button btnRilfe;
 		private System.Windows.Forms.Button btnLongbow;
+		private System.Windows.Forms.Label lblWeaponCost;
 	}
 }

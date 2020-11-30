@@ -12,7 +12,8 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 
 		public GameEnginClass(int min_width, int max_width, int min_height, int max_height, int num_enemies, int gold)
 		{
-			map = new MapClass(min_width, max_width, min_height, max_height, num_enemies, gold);
+			map = new MapClass(min_width, max_width, min_height, max_height, num_enemies, gold,new Random().Next(1,5));// Source of weaponDrop unknown
+			this.shop = new ShopClass(map.getHero());
 		}
 		public GameEnginClass()
 		{ }
@@ -47,7 +48,10 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		{
 			return map.getHero().ToString();
 		}
-
+		public HeroClass getHero()
+		{
+			return map.getHero();
+		}
 		public string getEnemiesRemaining()
 		{
 			string info = "";
@@ -103,12 +107,27 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 
 						map.foucsUpdateVision();
 					}
+					if (map.getMap()[heroY - 1, heroX] is WeaponsClass)
+					{
+						map.getHero().pickup((WeaponsClass)map.getMap()[heroY - 1, heroX]);
+						map.getMap()[heroY - 1, heroX] = new EmptyTileClass(heroY - 1, heroX);
+
+						map.foucsUpdateVision();
+					}
 				}
 				else if (move == CharacterClass.Movement.Down)
 				{
 					if (map.getMap()[heroY + 1, heroX] is GoldClass)
 					{
 						map.getHero().pickup((GoldClass)map.getMap()[heroY + 1, heroX]);
+						
+						map.getMap()[heroY + 1, heroX] = new EmptyTileClass(heroY + 1, heroX);
+
+						map.foucsUpdateVision();
+					}
+					if (map.getMap()[heroY + 1, heroX] is WeaponsClass)
+					{
+						map.getHero().pickup((WeaponsClass)map.getMap()[heroY + 1, heroX]);
 						map.getMap()[heroY + 1, heroX] = new EmptyTileClass(heroY + 1, heroX);
 
 						map.foucsUpdateVision();
@@ -123,12 +142,26 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 
 						map.foucsUpdateVision();
 					}
+					if (map.getMap()[heroY, heroX - 1] is WeaponsClass)
+					{
+						map.getHero().pickup((WeaponsClass)map.getMap()[heroY, heroX - 1]);
+						map.getMap()[heroY, heroX - 1] = new EmptyTileClass(heroY, heroX - 1);
+
+						map.foucsUpdateVision();
+					}
 				}
 				else if (move == CharacterClass.Movement.Right)
 				{
 					if (map.getMap()[heroY, heroX + 1] is GoldClass)
 					{
 						map.getHero().pickup((GoldClass)map.getMap()[heroY, heroX + 1]);
+						map.getMap()[heroY, heroX + 1] = new EmptyTileClass(heroY, heroX + 1);
+
+						map.foucsUpdateVision();
+					}
+					if (map.getMap()[heroY, heroX + 1] is WeaponsClass)
+					{
+						map.getHero().pickup((WeaponsClass)map.getMap()[heroY, heroX + 1]);
 						map.getMap()[heroY, heroX + 1] = new EmptyTileClass(heroY, heroX + 1);
 
 						map.foucsUpdateVision();
@@ -183,7 +216,8 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 
 				if (c_target.IsDead())
 				{
-					map.removeFromMap(c_target);
+				map.removeFromMap(c_target);
+					h.Loot(c_target);
 				}
 
 				moveEnemies();
@@ -228,6 +262,10 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 							 attack_status = attackEnemy(enemies_copy[i], CharacterClass.Movement.Nomovement, enemies_copy[i].getVision()[j]);
 
 						}
+						if (enemies_copy[i] is LeaderClass && j < 4)
+						{
+							attack_status = attackEnemy(enemies_copy[i], CharacterClass.Movement.Nomovement, enemies_copy[i].getVision()[j]);
+						}
 					}
 
 					enemies_copy[i].unlockVision();
@@ -263,7 +301,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			}
 
 
-			if ((h is HeroClass && target is EnemyClass && !h.IsDead()) || (h is GoblinClass && target is HeroClass) || (h is MagesClass && target is CharacterClass))
+			if ((h is HeroClass && target is EnemyClass && !h.IsDead()) || (h is GoblinClass && target is HeroClass) || (h is MagesClass && target is CharacterClass|| h is LeaderClass && target is HeroClass))
 			{
 
 				h.Attack((CharacterClass)target);
@@ -272,6 +310,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 				if (c_target.IsDead())
 				{
 					map.removeFromMap(c_target);
+					h.Loot(c_target);
 				}
 
 
@@ -305,7 +344,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		public Boolean saveGame()
 		{
 			try
-			{
+			{ 
 				FileStream file = new FileStream("save.dat", FileMode.Create, FileAccess.ReadWrite);
 				BinaryFormatter bf = new BinaryFormatter();
 				bf.Serialize(file, map);

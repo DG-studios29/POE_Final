@@ -24,10 +24,9 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		public override string ToString()
 		{
 			string infoDisplay = "";
-			infoDisplay += "Hp: " + hp.ToString();
-			infoDisplay += "Enemies in Game\n\n";
-			infoDisplay += "X Postion: "+x.ToString() + "\t";
-			infoDisplay += "Y Postion: " + y.ToString() + "\t" + "\n";
+			infoDisplay += "Hp: " + hp.ToString()+"\n";
+			infoDisplay += "X Postion: "+x.ToString() + "\n";
+			infoDisplay += "Y Postion: " + y.ToString() +  "\n";
 			infoDisplay += "Damage: " + damage.ToString();
 			
 			return infoDisplay;

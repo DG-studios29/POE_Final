@@ -21,10 +21,10 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			return magesHp;
 		}
 
-		public MagesClass(int x, int y, tileType type, int damage, int hp) : base(x, y, type, damage, hp,3)
+		public MagesClass(int x, int y, tileType type, int damage, int hp) : base(x, y, type, damage, 5,3)
 		{
 			magesDamage = damage;
-			magesHp = hp;
+			
 		}
 
 		public override Movement returnMove(Movement move = 0)
@@ -46,6 +46,16 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			return enmeyFound;
 
 		}
-	
+		public override string ToString()
+		{
+			string infoDisplay = "";
+			infoDisplay += this.hasWeapon() ? "Equipped: " + weapon.WeaponType : "Barehanded: ";
+			infoDisplay += "Mage";
+			infoDisplay += "(5/5HP)";
+			infoDisplay += " at [ "+x.ToString() + ", " + y.ToString() + "]";
+			infoDisplay += "(5 DMG)";
+
+			return infoDisplay;
+		}
 	}
 }

@@ -15,19 +15,6 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			Nomovement
 		}
 
-		protected int goldbag;
-		public int goldBag
-		{
-			get
-			{
-				return goldbag;
-			}
-			set
-			{
-				goldbag = value;
-			}
-		}
-
 		protected int HP;
 		public int hp
 		{
@@ -69,16 +56,16 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 				Damage = value;
 			}
 		}
-		protected WeaponsClass weapons;
-		public WeaponsClass Weapons
+		protected WeaponsClass weapon;
+		public WeaponsClass Weapon
 		{
 			get
 			{
-			return Weapons;
+			return Weapon;
 			}
 			set
 			{
-			Weapons = value;
+			Weapon = value;
 			}
 		}
 
@@ -200,9 +187,9 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 
 		private void Equip(WeaponsClass w)
 		{
-			weapons.setX(X);
-			weapons.setY(Y);
-			weapons = w;
+			//weapon.setX(X);
+			//weapon.setY(Y);
+			weapon = w;
 		}
 
 		public void pickup(ItemClass i)
@@ -222,7 +209,8 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		}
 		public int deductGold(int amount)
 		{
-			return goldAmount - amount;
+			 goldAmount = goldAmount - amount;
+			return goldAmount;
 		}
 		protected Boolean lock_vision = false;  
 
@@ -240,14 +228,25 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		{
 			return this.lock_vision;
 		}
-		
-		public void LootGold(CharacterClass target)
+		public bool hasWeapon()
 		{
-			goldBag += target.goldBag;
-			if ((this.type != TileClass.tileType.Enemy && weapons==null))
+			if (weapon == null)
 			{
-				Equip(target.weapons);
+				return false;
 			}
+			return true;
+		}
+		
+		public void Loot(CharacterClass target)
+		{
+			this.goldAmount += target.goldAmount;
+			target.goldAmount = 0;
+			if (!this.hasWeapon() && !(this is MagesClass))
+			{
+				this.weapon = target.weapon;
+				target.weapon = null;			
+			}
+			
 		}
 
 
