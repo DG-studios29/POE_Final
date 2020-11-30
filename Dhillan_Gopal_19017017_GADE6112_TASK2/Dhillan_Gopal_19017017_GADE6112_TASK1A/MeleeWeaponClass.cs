@@ -14,7 +14,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 
 			
 		//}
-		public MeleeWeaponClass(Types type, int x, int y) : base(x,y,"&")
+		public MeleeWeaponClass(Types type, int x = 0, int y = 0) : base(x,y,"&")
 		{
 			if (type == Types.Longsword)
 			{

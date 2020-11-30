@@ -16,12 +16,11 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 
 		public override string ToString()
 		{
-			if (CharacterClass.tileType.Weapon == tileType.rangedWeapons)
-			{
-			
-			}
-
 			string infoDisplay = "Player stats:\t";
+			if (IsDead() == true)
+			{
+				infoDisplay += "Your hero is dead :(";
+			} 
 			infoDisplay += "Player Hp: " + HP.ToString() + "\n";
 			infoDisplay += "X Postion: " + x.ToString() + "\t";
 			infoDisplay += "Y Postion: " + y.ToString() + "\t" + "\n";
@@ -29,6 +28,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			infoDisplay += "Amount of gold: " + this.getgoldAmount();
 			return infoDisplay;
 
+			
 		}
 
 		public override Movement returnMove(Movement move)

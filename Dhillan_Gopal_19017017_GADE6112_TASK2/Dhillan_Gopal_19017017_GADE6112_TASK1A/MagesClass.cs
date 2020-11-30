@@ -21,11 +21,10 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			return magesHp;
 		}
 
-		public MagesClass(int x, int y, tileType type, int damage, int hp) : base(x, y, type, damage, hp)
+		public MagesClass(int x, int y, tileType type, int damage, int hp) : base(x, y, type, damage, hp,3)
 		{
 			magesDamage = damage;
 			magesHp = hp;
-			goldBag =  3;
 		}
 
 		public override Movement returnMove(Movement move = 0)

@@ -194,7 +194,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 				}
 				else
 				{
-					return "1The enemy is dead";
+					return "1 The enemy is dead";
 				}
 
 			}
@@ -286,7 +286,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 					}
 					else
 					{
-						return "1The enemy is dead";
+						return "1 The enemy is dead";
 					}
 				}
 				else

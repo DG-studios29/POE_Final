@@ -12,6 +12,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		private EnemyClass[] enemies;
 		private int width;
 		private int height;
+		
 
 		public MapClass(int min_width, int max_width, int min_height, int max_height, int num_enemies, int gold)
 		{
@@ -100,15 +101,17 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		}
 		public EnemyClass enemyGen(int y, int x)
 		{
-			if (rnd.Next(1, 3) == 1)
+			int maxEnemyTypes = 3;
+			if (rnd.Next(1, maxEnemyTypes) == 1)
 			{
 				return new MagesClass(y, x, TileClass.tileType.Enemy, 5, 5);
 			}
-			else
+			else if (rnd.Next(1, maxEnemyTypes) == 2)
 			{
-				return new GoblinClass(y, x);
+				return new LeaderClass(y,x);
 			}
-			
+			return new GoblinClass(y, x);
+
 		}
 
 		private void updateVision()
@@ -210,7 +213,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			return characterVision;
 
 		}
-
+		
 		private int[] getSpawnPosition()
 		{
 			int x_position = rnd.Next(1, width);
@@ -229,7 +232,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 				return getSpawnPosition();
 			}
 		}
-
+		
 		public void setMap(TileClass[,] map)
 		{
 			this.map = map;
@@ -238,11 +241,6 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		public TileClass[,] getMap()
 		{
 			return this.map;
-		}
-
-		public void setHero(HeroClass hero)
-		{
-			this.hero = hero;
 		}
 
 		public HeroClass getHero()

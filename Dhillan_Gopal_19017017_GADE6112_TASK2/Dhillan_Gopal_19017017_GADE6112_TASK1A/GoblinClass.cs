@@ -6,7 +6,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 	class GoblinClass : EnemyClass
 	{
 
-		public GoblinClass(int x, int y) : base(x, y, TileClass.tileType.Enemy, 1, 10)
+		public GoblinClass(int x, int y) : base(x, y, TileClass.tileType.Enemy, 1, 10,1)
 		{
 			
 		}
@@ -16,7 +16,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			int[] possible_moves = { 0, 1, 2, 3 };
 			Boolean moveFound = false;
 			CharacterClass.Movement direction = CharacterClass.Movement.Nomovement;
-
+			Random rnd = new Random();
 
 			while (!moveFound)
 			{

@@ -68,16 +68,16 @@
 			// lblHeroStats
 			// 
 			this.lblHeroStats.AutoSize = true;
-			this.lblHeroStats.Location = new System.Drawing.Point(244, 12);
+			this.lblHeroStats.Location = new System.Drawing.Point(1179, 91);
 			this.lblHeroStats.Name = "lblHeroStats";
 			this.lblHeroStats.Size = new System.Drawing.Size(0, 17);
 			this.lblHeroStats.TabIndex = 16;
 			// 
 			// btnRight
 			// 
-			this.btnRight.Location = new System.Drawing.Point(1156, 619);
+			this.btnRight.Location = new System.Drawing.Point(1290, 745);
 			this.btnRight.Name = "btnRight";
-			this.btnRight.Size = new System.Drawing.Size(112, 100);
+			this.btnRight.Size = new System.Drawing.Size(85, 73);
 			this.btnRight.TabIndex = 8;
 			this.btnRight.Text = "Right >";
 			this.btnRight.UseVisualStyleBackColor = true;
@@ -85,9 +85,9 @@
 			// 
 			// btnUp
 			// 
-			this.btnUp.Location = new System.Drawing.Point(1026, 502);
+			this.btnUp.Location = new System.Drawing.Point(1160, 628);
 			this.btnUp.Name = "btnUp";
-			this.btnUp.Size = new System.Drawing.Size(112, 100);
+			this.btnUp.Size = new System.Drawing.Size(85, 73);
 			this.btnUp.TabIndex = 9;
 			this.btnUp.Text = "Up /\\";
 			this.btnUp.UseVisualStyleBackColor = true;
@@ -95,9 +95,9 @@
 			// 
 			// btnDown
 			// 
-			this.btnDown.Location = new System.Drawing.Point(1026, 619);
+			this.btnDown.Location = new System.Drawing.Point(1160, 745);
 			this.btnDown.Name = "btnDown";
-			this.btnDown.Size = new System.Drawing.Size(112, 100);
+			this.btnDown.Size = new System.Drawing.Size(85, 73);
 			this.btnDown.TabIndex = 10;
 			this.btnDown.Text = "Down \\/";
 			this.btnDown.UseVisualStyleBackColor = true;
@@ -105,9 +105,9 @@
 			// 
 			// btnLeft
 			// 
-			this.btnLeft.Location = new System.Drawing.Point(897, 619);
+			this.btnLeft.Location = new System.Drawing.Point(1031, 745);
 			this.btnLeft.Name = "btnLeft";
-			this.btnLeft.Size = new System.Drawing.Size(112, 100);
+			this.btnLeft.Size = new System.Drawing.Size(85, 73);
 			this.btnLeft.TabIndex = 11;
 			this.btnLeft.Text = "< Left";
 			this.btnLeft.UseVisualStyleBackColor = true;
@@ -117,16 +117,16 @@
 			// 
 			this.lblMapView.AutoSize = true;
 			this.lblMapView.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblMapView.Location = new System.Drawing.Point(550, 135);
+			this.lblMapView.Location = new System.Drawing.Point(354, 26);
 			this.lblMapView.Name = "lblMapView";
 			this.lblMapView.Size = new System.Drawing.Size(0, 22);
 			this.lblMapView.TabIndex = 17;
 			// 
 			// btnAttackUp
 			// 
-			this.btnAttackUp.Location = new System.Drawing.Point(247, 502);
+			this.btnAttackUp.Location = new System.Drawing.Point(241, 628);
 			this.btnAttackUp.Name = "btnAttackUp";
-			this.btnAttackUp.Size = new System.Drawing.Size(110, 100);
+			this.btnAttackUp.Size = new System.Drawing.Size(83, 73);
 			this.btnAttackUp.TabIndex = 18;
 			this.btnAttackUp.Text = "Up /\\";
 			this.btnAttackUp.UseVisualStyleBackColor = true;
@@ -134,9 +134,9 @@
 			// 
 			// btnAttackLeft
 			// 
-			this.btnAttackLeft.Location = new System.Drawing.Point(109, 619);
+			this.btnAttackLeft.Location = new System.Drawing.Point(103, 745);
 			this.btnAttackLeft.Name = "btnAttackLeft";
-			this.btnAttackLeft.Size = new System.Drawing.Size(110, 100);
+			this.btnAttackLeft.Size = new System.Drawing.Size(83, 73);
 			this.btnAttackLeft.TabIndex = 18;
 			this.btnAttackLeft.Text = "< Left";
 			this.btnAttackLeft.UseVisualStyleBackColor = true;
@@ -144,9 +144,9 @@
 			// 
 			// btnAttackDown
 			// 
-			this.btnAttackDown.Location = new System.Drawing.Point(247, 619);
+			this.btnAttackDown.Location = new System.Drawing.Point(241, 745);
 			this.btnAttackDown.Name = "btnAttackDown";
-			this.btnAttackDown.Size = new System.Drawing.Size(110, 100);
+			this.btnAttackDown.Size = new System.Drawing.Size(83, 73);
 			this.btnAttackDown.TabIndex = 18;
 			this.btnAttackDown.Text = "Down \\/";
 			this.btnAttackDown.UseVisualStyleBackColor = true;
@@ -154,9 +154,9 @@
 			// 
 			// btnAttackRight
 			// 
-			this.btnAttackRight.Location = new System.Drawing.Point(383, 619);
+			this.btnAttackRight.Location = new System.Drawing.Point(377, 745);
 			this.btnAttackRight.Name = "btnAttackRight";
-			this.btnAttackRight.Size = new System.Drawing.Size(110, 100);
+			this.btnAttackRight.Size = new System.Drawing.Size(83, 73);
 			this.btnAttackRight.TabIndex = 18;
 			this.btnAttackRight.Text = "Right >";
 			this.btnAttackRight.UseVisualStyleBackColor = true;
@@ -166,7 +166,7 @@
 			// 
 			this.btnSaveGame.Location = new System.Drawing.Point(1182, 12);
 			this.btnSaveGame.Name = "btnSaveGame";
-			this.btnSaveGame.Size = new System.Drawing.Size(175, 49);
+			this.btnSaveGame.Size = new System.Drawing.Size(303, 51);
 			this.btnSaveGame.TabIndex = 19;
 			this.btnSaveGame.Text = "Save Game";
 			this.btnSaveGame.UseVisualStyleBackColor = true;
@@ -176,7 +176,7 @@
 			// 
 			this.lblAttackBtn.AutoSize = true;
 			this.lblAttackBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblAttackBtn.Location = new System.Drawing.Point(209, 446);
+			this.lblAttackBtn.Location = new System.Drawing.Point(176, 572);
 			this.lblAttackBtn.Name = "lblAttackBtn";
 			this.lblAttackBtn.Size = new System.Drawing.Size(198, 32);
 			this.lblAttackBtn.TabIndex = 20;
@@ -186,7 +186,7 @@
 			// 
 			this.lblMoveBtn.AutoSize = true;
 			this.lblMoveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblMoveBtn.Location = new System.Drawing.Point(986, 446);
+			this.lblMoveBtn.Location = new System.Drawing.Point(1093, 572);
 			this.lblMoveBtn.Name = "lblMoveBtn";
 			this.lblMoveBtn.Size = new System.Drawing.Size(188, 32);
 			this.lblMoveBtn.TabIndex = 20;
@@ -194,9 +194,10 @@
 			// 
 			// btnDagger
 			// 
-			this.btnDagger.Location = new System.Drawing.Point(589, 446);
+			this.btnDagger.Enabled = false;
+			this.btnDagger.Location = new System.Drawing.Point(531, 628);
 			this.btnDagger.Name = "btnDagger";
-			this.btnDagger.Size = new System.Drawing.Size(211, 50);
+			this.btnDagger.Size = new System.Drawing.Size(207, 32);
 			this.btnDagger.TabIndex = 21;
 			this.btnDagger.Text = "Dagger: 3$";
 			this.btnDagger.UseVisualStyleBackColor = true;
@@ -204,9 +205,10 @@
 			// 
 			// btnLongsword
 			// 
-			this.btnLongsword.Location = new System.Drawing.Point(589, 527);
+			this.btnLongsword.Enabled = false;
+			this.btnLongsword.Location = new System.Drawing.Point(744, 628);
 			this.btnLongsword.Name = "btnLongsword";
-			this.btnLongsword.Size = new System.Drawing.Size(211, 50);
+			this.btnLongsword.Size = new System.Drawing.Size(207, 32);
 			this.btnLongsword.TabIndex = 21;
 			this.btnLongsword.Text = "Longsword: 5$";
 			this.btnLongsword.UseVisualStyleBackColor = true;
@@ -214,9 +216,10 @@
 			// 
 			// btnRilfe
 			// 
-			this.btnRilfe.Location = new System.Drawing.Point(589, 669);
+			this.btnRilfe.Enabled = false;
+			this.btnRilfe.Location = new System.Drawing.Point(744, 676);
 			this.btnRilfe.Name = "btnRilfe";
-			this.btnRilfe.Size = new System.Drawing.Size(211, 50);
+			this.btnRilfe.Size = new System.Drawing.Size(207, 32);
 			this.btnRilfe.TabIndex = 21;
 			this.btnRilfe.Text = "Rilfe: 7$";
 			this.btnRilfe.UseVisualStyleBackColor = true;
@@ -224,9 +227,10 @@
 			// 
 			// btnLongbow
 			// 
-			this.btnLongbow.Location = new System.Drawing.Point(589, 604);
+			this.btnLongbow.Enabled = false;
+			this.btnLongbow.Location = new System.Drawing.Point(531, 676);
 			this.btnLongbow.Name = "btnLongbow";
-			this.btnLongbow.Size = new System.Drawing.Size(211, 50);
+			this.btnLongbow.Size = new System.Drawing.Size(207, 32);
 			this.btnLongbow.TabIndex = 21;
 			this.btnLongbow.Text = "Longbow: 6$";
 			this.btnLongbow.UseVisualStyleBackColor = true;
@@ -236,7 +240,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1369, 749);
+			this.ClientSize = new System.Drawing.Size(1497, 848);
 			this.Controls.Add(this.btnLongbow);
 			this.Controls.Add(this.btnRilfe);
 			this.Controls.Add(this.btnLongsword);

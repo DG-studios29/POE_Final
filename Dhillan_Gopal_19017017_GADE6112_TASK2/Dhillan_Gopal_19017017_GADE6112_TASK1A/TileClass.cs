@@ -63,11 +63,6 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			return type;
 		}
 
-		public void setTileType(tileType type)
-		{
-			this.type = type;
-		}
-
 		public int getX()
 		{
 			return x;

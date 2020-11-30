@@ -101,6 +101,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 				if (ge.getMap().getHero().IsDead())
 				{
 					return '.';
+					
 				}
 				else
 				{
@@ -117,7 +118,8 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			}
 			else if (type is MeleeWeaponClass)
 			{
-				return '^';
+				
+				return '&';
 			}
 
 			else if (type is RangedWeaponClass)
@@ -221,12 +223,12 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			if(ge.Shop.CanBuy(0))
 			{
 				ge.Shop.Buy(0);
-				btnDagger.Visible = true;
+				btnDagger.Enabled = true;
 				updatePlayerStats(ge.getHeroStats());
 			}
 			else
 			{
-				btnDagger.Visible = false;
+				btnDagger.Enabled = false;
 			}
 		}
 
@@ -235,12 +237,12 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			if (ge.Shop.CanBuy(1))
 			{
 				ge.Shop.Buy(1);
-				btnLongsword.Visible = true;
+				btnLongsword.Enabled = true;
 				updatePlayerStats(ge.getHeroStats());
 			}
 			else
 			{
-				btnLongsword.Visible = false;
+				btnLongsword.Enabled = false;
 			}
 		}
 
@@ -249,12 +251,12 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			if (ge.Shop.CanBuy(2))
 			{
 				ge.Shop.Buy(2);
-				btnLongbow.Visible = true;
+				btnLongbow.Enabled = true;
 				updatePlayerStats(ge.getHeroStats());
 			}
 			else
 			{
-				btnLongbow.Visible = false;
+				btnLongbow.Enabled = false;
 			}
 		}
 
@@ -263,12 +265,12 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			if (ge.Shop.CanBuy(3))
 			{
 				ge.Shop.Buy(3);
-				btnRilfe.Visible = true;
+				btnRilfe.Enabled = true;
 				updatePlayerStats(ge.getHeroStats());
 			}
 			else
 			{
-				btnRilfe.Visible = false;
+				btnRilfe.Enabled = false;
 			}
 		}
 	}

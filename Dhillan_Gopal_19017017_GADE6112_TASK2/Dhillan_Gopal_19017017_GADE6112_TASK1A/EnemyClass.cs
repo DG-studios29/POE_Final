@@ -12,7 +12,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 	abstract class EnemyClass : CharacterClass
 	{
 		
-		public EnemyClass(int x, int y, TileClass.tileType type, int damage, int hp) : base(x, y, type)
+		public EnemyClass(int x, int y, TileClass.tileType type, int damage, int hp,int golddrop) : base(x, y, type)
 		{
 			setDamage(damage);
 			setHp(hp);

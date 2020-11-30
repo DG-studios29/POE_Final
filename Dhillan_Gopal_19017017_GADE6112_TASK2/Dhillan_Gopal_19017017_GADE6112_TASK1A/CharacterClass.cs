@@ -120,6 +120,7 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 			if (HP <= 0)
 			{
 				return true;
+				
 			}
 			else
 			{
@@ -218,6 +219,10 @@ namespace Dhillan_Gopal_19017017_GADE6112_TASK1A
 		public int getgoldAmount()
 		{
 			return goldAmount;
+		}
+		public int deductGold(int amount)
+		{
+			return goldAmount - amount;
 		}
 		protected Boolean lock_vision = false;  
 
